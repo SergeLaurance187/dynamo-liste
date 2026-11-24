@@ -405,15 +405,23 @@ if ($authed) plan_refresh_if_stale();
 
   /* ---------- Kopf ---------- */
   header{
-    position:sticky; top:0; z-index:20; margin:0 0 12px;
+    position:relative; z-index:20; margin:0 0 12px;
     padding:13px 16px 12px;
-    border-radius:0 0 var(--r) var(--r);
-    border-top:0;
-    background:linear-gradient(180deg, rgba(20,20,16,.82), rgba(20,20,16,.55));
-    backdrop-filter:blur(26px) saturate(170%);
-    -webkit-backdrop-filter:blur(26px) saturate(170%);
-    border-bottom:1px solid var(--hair);
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    border-radius:var(--r);
+    background:linear-gradient(170deg, rgba(255,255,255,.085), rgba(255,255,255,.035) 46%, rgba(255,255,255,.055));
+    backdrop-filter:blur(26px) saturate(165%);
+    -webkit-backdrop-filter:blur(26px) saturate(165%);
+    border:1px solid var(--hair);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.22),
+      inset 0 -1px 0 rgba(255,255,255,.05),
+      0 12px 34px rgba(0,0,0,.42);
+  }
+  @supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+    header{background:#1b1b17}
+  }
+  @media (prefers-reduced-transparency:reduce){
+    header{background:#1b1b17;backdrop-filter:none;-webkit-backdrop-filter:none}
   }
   .brand{display:flex;align-items:center;gap:10px}
   .dot{
