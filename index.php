@@ -570,8 +570,8 @@ if ($authed) plan_refresh_if_stale();
   .num{text-align:right;font-variant-numeric:tabular-nums;font-size:15px;font-weight:600;color:var(--ink-dim)}
   .num.zero{color:var(--ink-faint);font-weight:500}
   .num.tot{color:var(--ink);font-weight:700}
-  .bar{grid-column:1/-1;height:3px;border-radius:3px;background:rgba(255,255,255,.07);margin-top:10px;overflow:hidden}
-  .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),rgba(242,221,0,.45))}
+  .mxbar{grid-column:1/-1;height:3px;border-radius:3px;background:rgba(255,255,255,.07);margin-top:10px;overflow:hidden}
+  .mxbar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),rgba(242,221,0,.45))}
   .mxfoot{margin:12px 6px 0;font-size:11.5px;color:var(--ink-faint);line-height:1.6}
 
   /* ---------- Dialog ---------- */
@@ -880,7 +880,7 @@ function renderStats(){
       row.appendChild(n);
     });
 
-    const bar = document.createElement('div'); bar.className = 'bar';
+    const bar = document.createElement('div'); bar.className = 'mxbar';
     const fill = document.createElement('i');
     fill.style.width = (d.total ? Math.round(r.t / d.total * 100) : 0) + '%';
     bar.appendChild(fill); row.appendChild(bar);
