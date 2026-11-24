@@ -405,7 +405,7 @@ if ($authed) plan_refresh_if_stale();
 
   /* ---------- Kopf ---------- */
   header{
-    position:relative; z-index:20; margin:0 0 12px;
+    margin:0 0 12px;
     padding:13px 16px 12px;
     border-radius:var(--r);
     background:linear-gradient(170deg, rgba(255,255,255,.085), rgba(255,255,255,.035) 46%, rgba(255,255,255,.055));
